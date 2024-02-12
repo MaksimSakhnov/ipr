@@ -1,26 +1,28 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import { transformDateToCustomFormat } from 'shared/utils/transformDateToCustomFormat';
+import { useTranslation } from 'react-i18next';
 import { addOrSubToDate } from 'shared/utils/addOrSubToDate';
+import { transformDateToCustomFormat } from 'shared/utils/transformDateToCustomFormat';
 import { PeopleCardProps } from './PeopleCard.type';
 
 export function PeopleCard({ data }: PeopleCardProps) {
+  const { t } = useTranslation();
   return (
     <Card sx={{ width: '20vw' }}>
       <CardContent>
         <Typography variant="h4">{data.name}</Typography>
         <Typography variant={'h6'}>{data.birth_year}</Typography>
         <Typography>
-          Создано: {transformDateToCustomFormat(data.created)}
+          {t('card.created')}: {transformDateToCustomFormat(data.created)}
         </Typography>
         <Typography>
-          Изменено: {transformDateToCustomFormat(data.edited)}
+          {t('card.edited')} {transformDateToCustomFormat(data.edited)}
         </Typography>
         <Typography>
-          Дата создания + 10 дней: {addOrSubToDate(data.created, 10, 'add')}
+          {t('card.date_created')}: {addOrSubToDate(data.created, 10, 'add')}
         </Typography>
 
         <Typography>
-          Дата изменения - 22 дня: {addOrSubToDate(data.edited, 22, 'sub')}
+          {t('card.date_edited')}: {addOrSubToDate(data.edited, 22, 'sub')}
         </Typography>
       </CardContent>
     </Card>

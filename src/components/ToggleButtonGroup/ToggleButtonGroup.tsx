@@ -6,8 +6,8 @@ import {
   ReactElement,
 } from 'react';
 import cn from 'classnames';
-import type { ToggleButtonGroupProps } from './ToggleButtonGroup.type';
 import { ReactComponent as DividerIcon } from 'assets/icons/divider.svg';
+import type { ToggleButtonGroupProps } from './ToggleButtonGroup.type';
 import styles from './ToggleButtonGroup.module.scss';
 
 export const ToggleButtonGroup: FC<ToggleButtonGroupProps> = function ({

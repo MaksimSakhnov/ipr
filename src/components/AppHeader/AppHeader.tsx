@@ -1,8 +1,8 @@
+import { useTranslation } from 'react-i18next';
+import AppHeaderControls from 'components/AppHeaderControls';
 import ToggleButton from 'components/ToggleButton';
 import ToggleButtonGroup from 'components/ToggleButtonGroup';
-import AppHeaderControls from 'components/AppHeaderControls';
-import { AppHeaderProps } from './AppHeader.type';
-import { MENU_CONSTANTS } from './AppHeader.constants';
+import type { AppHeaderProps } from './AppHeader.type';
 import styles from './AppHeader.module.scss';
 
 export function AppHeader({
@@ -10,7 +10,30 @@ export function AppHeader({
   historyPush,
   changeTheme,
   darkTheme,
+  toggleLanguage,
+  currentLanguage,
 }: AppHeaderProps) {
+  const { t } = useTranslation();
+
+  const MENU_CONSTANTS = [
+    {
+      label: (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <span>{t('menu.people')}</span>
+        </div>
+      ),
+      value: '',
+    },
+    {
+      label: (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+          <span>{t('menu.films')}</span>
+        </div>
+      ),
+      value: 'films',
+    },
+  ];
+
   return (
     <div className={styles.app_header}>
       <div className={styles.app_header__navigation}>
@@ -31,6 +54,12 @@ export function AppHeader({
           currentValue={darkTheme}
           onChange={changeTheme}
           type={'theme'}
+        />
+
+        <AppHeaderControls
+          currentValue={currentLanguage}
+          onChange={toggleLanguage}
+          type={'language'}
         />
       </div>
     </div>

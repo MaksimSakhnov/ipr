@@ -1,9 +1,17 @@
 export interface IPeopleStore {
   people: IPeople[];
-  isLoading: boolean;
   getPeople: () => void;
 }
 
+export interface IFilmsStore {
+  films: IFilm[];
+  getFilms: () => void;
+}
+
+export interface IFilm {
+  title: string;
+  episode_id: number;
+}
 export interface IAppStore {
   darkTheme: boolean;
   toggleTheme: () => void;

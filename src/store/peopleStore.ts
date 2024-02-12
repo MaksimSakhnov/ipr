@@ -4,7 +4,6 @@ import { IPeopleStore } from './store.type';
 
 export const usePeople = create<IPeopleStore>()((setState) => ({
   people: [],
-  isLoading: false,
   getPeople: async () => {
     const data = await PeopleApi.getPeople();
     setState({

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { usePeople } from 'store';
 import { Paper } from '@mui/material';
 import PeopleCard from 'components/PeopleCard';
+import { usePeople } from 'store';
 import styles from './PagePeople.module.scss';
 
 export function PagePeople() {

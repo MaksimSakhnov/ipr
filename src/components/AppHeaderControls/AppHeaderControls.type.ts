@@ -1,5 +1,5 @@
 export type AppHeaderControlsProps = {
-  currentValue: boolean;
+  currentValue: boolean | string;
   onChange: () => void;
   type: 'language' | 'theme';
 };

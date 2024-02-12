@@ -3,4 +3,6 @@ export interface AppHeaderProps {
   historyPush: (value: string) => void;
   changeTheme: () => void;
   darkTheme: boolean;
+  toggleLanguage: () => void;
+  currentLanguage: string;
 }

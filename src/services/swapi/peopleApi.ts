@@ -1,5 +1,5 @@
-import { client } from './axios';
 import { PeopleType } from './api.type';
+import { client } from './axios';
 
 export const PeopleApi = {
   async getPeople() {

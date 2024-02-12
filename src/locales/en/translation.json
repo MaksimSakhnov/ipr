@@ -1,0 +1,21 @@
+{
+  "menu": {
+    "people": "People",
+    "films": "Films"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "ru": "ru",
+    "en": "en"
+  },
+  "card": {
+    "episode": "Episode",
+    "created": "Created",
+    "edited": "Edited",
+    "date_created": "Date created + 10 days",
+    "date_edited": "Date edited - 22 days"
+  }
+}
