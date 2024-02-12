@@ -1,0 +1,60 @@
+@import 'src/styles/colors';
+
+.toggle_button {
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  padding: 17px 10px 18px;
+  text-decoration-line: none;
+  line-height: 0;
+
+  &:disabled {
+    cursor: default;
+    color: #595959;
+    opacity: 0.6;
+  }
+
+  &-active {
+    color: $main-blue;
+    cursor: default;
+    overflow-y: hidden;
+    position: relative;
+
+    path {
+      fill: $main-blue;
+    }
+
+    &::before {
+      background-color: $main-blue;
+      bottom: -4px;
+      box-shadow: 0px -4px 12px $main-blue;
+      border-radius: 2px;
+      content: '';
+      height: 6px;
+      left: 10px;
+      position: absolute;
+      right: 10px;
+    }
+
+    &:disabled {
+      color: $main-blue;
+    }
+  }
+
+  &-design_version_14 {
+    text-transform: none;
+    font-size: 19.5px;
+    line-height: 20px;
+    padding: 21px 10px 22px;
+    &.toggle_button-active {
+      &::before {
+        height: 40px;
+        bottom: -38px;
+        box-shadow: 0px -8px 28px rgb(242, 113, 48, 0.3);
+      }
+    }
+  }
+}

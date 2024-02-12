@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  &-design_version_14 {
+    display: block;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,89 @@
+@import 'src/styles/colors';
+
+.app_header {
+  z-index: 1001;
+  height: 64px;
+  display: flex;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 16px;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  &__info {
+    display: flex;
+    gap: 20px;
+    justify-self: right;
+    align-items: center;
+    padding-right: 2vw;
+
+    .message {
+      border: none;
+      box-shadow: none;
+      opacity: 50%;
+    }
+
+    .user {
+      border: none;
+      color: $sonic-silver;
+      display: flex;
+      flex-direction: column;
+      box-shadow: none;
+      opacity: 50%;
+
+    }
+
+    .settings {
+      border: none;
+      color: $sonic-silver;
+      display: flex;
+      flex-direction: column;
+      box-shadow: none;
+      opacity: 50%;
+
+      &__icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 2vw;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 16px;
+    .title_text{
+      margin-left: 10px;
+    }
+  }
+  &__logo{
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .app_header{
+    &__navigation{
+      overflow-x: scroll;
+      span{
+        display: none;
+      }
+    }
+  }
+}

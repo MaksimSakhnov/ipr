@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import AppHeaderContainer from './containers/AppHeaderContainer';
+import { FILMS, MAIN } from './routes/routes';
+import PagePeople from './pages/PagePeople';
+import PageFilms from './pages/PageFilms';
+import { useAppStore } from './store';
+import { DarkTheme, LightTheme } from './pages/PagePeople/PagePeople.const';
+import { ThemeProvider } from '@mui/material';
 
 function App() {
+  const darkTheme = useAppStore((state) => state.darkTheme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme ? DarkTheme : LightTheme}>
+      <AppHeaderContainer />
+
+      <div>
+        <Routes>
+          <Route path={MAIN} element={<PagePeople />} />
+          <Route path={FILMS} element={<PageFilms />} />
+        </Routes>
+      </div>
+    </ThemeProvider>
   );
 }
 
